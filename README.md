@@ -47,11 +47,11 @@
         
     4.调用
         $("#{yourId}").gallary({
-        "pic_nums" : 5, // 图片个数,对应上述html里IMG标签个数；默认3个
-        "hide_text" : false, //是否自动隐藏文字；默认是true，即自动隐藏
-        "auto" : true, //是否自动播放；默认是false
-        "auto_interval": 3000, //自动播放的间隔，单位毫秒；默认3000毫秒，即三秒
-        "mouse" : true, //是否支持鼠标切换图片；默认是false
-        "mouse_id" : this.attr("id") //鼠标切换触发的id；默认是主id即{your_id}
-});
+	        "pic_nums" : 5, // 图片个数,对应上述html里IMG标签个数；默认3个
+	        "hide_text" : false, //是否自动隐藏文字；默认是true，即自动隐藏
+	        "auto" : true, //是否自动播放；默认是false
+	        "auto_interval": 3000, //自动播放的间隔，单位毫秒；默认3000毫秒，即三秒
+	        "mouse" : true, //是否支持鼠标切换图片；默认是false
+	        "mouse_id" : this.attr("id") //鼠标切换触发的id；默认是主id即{your_id}
+		});
 *演示地址： [http://quchen.cau.edu.cn/jsDev/jquery-gallary/](http://quchen.cau.edu.cn/jsDev/jquery-gallary/) .
