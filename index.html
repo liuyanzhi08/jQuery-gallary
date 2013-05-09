@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Nancle from CAU CS101" />
+<title>jquery-gallary</title>
+</head>
+<script type="text/javascript" src="lib/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="lib/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="jquery.gallary.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#gallary").gallary({	
+		"pic_nums" : 5,
+		"auto" : false,
+		"auto_interval" : 3000,
+		"mouse" : false,
+	});
+		
+})
+</script>
+
+<style type="text/css">
+	/*site css start*/
+	body{background:#89b543; font-family:Verdana, Geneva, sans-serif; font-size:14px; line-height:29px}
+	.wrapper{ width:800px; margin:0 auto;  margin-bottom:10px;  }
+	.wrapper h1{ text-align:center; width:800px; font-size:30px }
+	.tip{ width:740px; margin:0 auto; background:#fff; padding:6px 30px}
+	.tip h1{ font-size:14px; line-height:30px}
+	.tip h1 span{font-size:13px; font-weight:normal; margin-left:10px}
+	.tip p{ margin:0 } .tip a{ color:#000; text-decoration:none }
+	.tip .codeWrapper{ background:#eaeaea }
+	.tip code{font-size:13px; font-family:Verdana, Geneva, sans-serif;}
+	.tip ol{ background:#eaeaea;}
+	.tip ol li{ list-style: decimal-leading-zero; border-left: 3px solid #999; padding: 0 5px;}
+	/*site css end*/
+	
+	/*core css start*/
+	#gallary_wrapper{ width:100%; height:289px; background:#fff}
+	#gallary{ width:800px; height:289px; margin:0 auto; position:relative; overflow:hidden}
+	.gallary_slide{ width:800px; height:289px; float:left; overflow:hidden }
+	#gallary_nav_left, #gallary_nav_right{ width:61px; height:61px;  position:absolute }
+	#gallary_nav_left{ background-image:url(lib/gallary_nav_left.png); left:700px; top:170px }
+	#gallary_nav_right{ background-image:url(lib/gallary_nav_right.png); left:700px; top:60px }
+	#gallary_text{height:289px; width:200px; background:url(lib/gallary_text_bg.png) repeat;
+	 position:absolute; left:0px; top:0px; color:#ccc; padding:20px; overflow:hidden;}
+	#gallary_slides{ height:289px; position:absolute; top:0; left:0}
+	
+	
+	#gallary_text  h1{ font-size:17px; margin-bottom:8px; text-align:left; font-weight:bold; width:200px; height:27px; overflow:hidden }
+	#gallary_text  p{ font-size:14px; line-height:27px; text-indent:30px}
+	.gallary_text_block{display:none}
+	/*core css end*/
+</style>
+<body id="test">
+	<div class="wrapper">
+    	<h1>jquery-gallary</h1>
+    </div>
+	     
+    <div class="wrapper">
+     <!--滚动图片开始-->
+       <div id="gallary_wrapper">
+            <div id="gallary">
+                <div id="gallary_slides">
+                    <div class="gallary_slide"><img src="lib/gallary_pic.png" /></div>
+                    <div class="gallary_slide"><img src="lib/gallary_pic2.png" /></div>
+                    <div class="gallary_slide"><img src="lib/gallary_pic3.png" /></div>
+                    <div class="gallary_slide"><img src="lib/gallary_pic4.png" /></div>
+                    <div class="gallary_slide"><img src="lib/gallary_pic5.png" /></div>
+                </div>
+                <div id="gallary_text">
+                    <div class="gallary_text_block">
+                        <h1 class="gallary_text_title">50款非常棒的 jQuery 插件分享</h1>
+                        <p class="gallary_text_detail">1</p>
+                    </div>
+                    <div class="gallary_text_block">
+                        <h1 class="gallary_text_title">50款非常棒的 jQuery 插件分享</h1>
+                        <p class="gallary_text_detail">2</p>
+                    </div>
+                    <div class="gallary_text_block">
+                        <h1 class="gallary_text_title">50款非常棒的 jQuery 插件分享</h1>
+                        <p class="gallary_text_detail">3</p>
+                    </div>
+                    <div class="gallary_text_block">
+                        <h1 class="gallary_text_title">50款非常棒的 jQuery 插件分享</h1>
+                        <p class="gallary_text_detail">4</p>
+                    </div>
+                    <div class="gallary_text_block">
+                        <h1 class="gallary_text_title">50款非常棒的 jQuery 插件分享</h1>
+                        <p class="gallary_text_detail">5</p>
+                    </div>
+                </div>
+                <div id="gallary_nav_left"></div>
+                	<div id="gallary_nav_right"></div>
+           		 </div>
+       </div>
+       <!--滚动图片结束-->
+    </div>
+    <div class="tip">	
+    	<h1>经过IE6&IE6+，chrome，firefox测试兼容<span>使用方法： {yourId}替换成你的id</span></h1>
+      
+        <h1>HTML</h1>
+        <div class="codeWrapper">
+        	<ol>
+            	<li><code>&lt;div id="{your_id}"&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="{your_id}_slides"&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="{your_id}_slide"&gt;&lt;img src="{src}" /&gt;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="{your_id}_slide"&gt;&lt;img src="{src}" /&gt;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="{your_id}_text"&gt;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="{your_id}_text_block"&gt;&lt;/code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="{your_id}_text_title"&gt;标题&lt;/h1&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="{your_id}_text_detail">内容&lt;/p&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="{your_id}_nav_left"&gt;&lt;/div&gt;</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="{your_id}_nav_right"&gt;&lt;/div&gt;</code></li>
+                <li><code>&lt;/div&gt;</code></li>
+            </ol>
+        </div>
+        
+        <h1>CSS<span>以下这些参数可以根据需要自行调整</span></h1>
+        <div class="codeWrapper">
+            <ol>
+                <li><code>#{your_id}_wrapper{ width:100%; height:289px; background:#fff}</code></li>
+                <li><code>#{your_id}{ width:800px; height:289px; margin:0 auto; position:relative; overflow:hidden}</code></li>
+               	<li><code>.{your_id}_slide{ width:800px; height:289px; float:left; overflow:hidden }</code></li>
+                <li><code>#{your_id}_nav_left, #{your_id}_nav_right{ width:61px; height:61px;  position:absolute }</code></li>
+                <li><code>#{your_id}_nav_left{ background-image:url(lib/gallary_nav_left.png); left:700px; top:170px }</code></li>
+                <li><code>#{your_id}_nav_right{ background-image:url(lib/gallary_nav_right.png); left:700px; top:60px }</code></li>
+                <li><code>#{your_id}_text{height:289px; width:200px; background:url(lib/gallary_text_bg.png) repeat;
+	 position:absolute; left:0px; top:0px; color:#ccc; padding:20px; overflow:hidden;}</code></li>
+                <li><code>#{your_id}_slides{ height:289px; position:absolute; top:0; left:0}</code></li>
+                <li><code>#{your_id}_text  h1{ font-size:17px; margin-bottom:8px; text-align:left; font-weight:bold; width:200px; height:27px; overflow:hidden }</code></li>
+                <li><code>#{your_id}_text  p{ font-size:14px; line-height:27px; text-indent:30px}</code></li>
+                <li><code>.{your_id}_text_block{display:none}</code></li>
+                
+        </div>
+       
+        <h1>JS</h1>
+        <div class="codeWrapper">
+        	<ol>
+            	<li><code>&lt;script type="text/javascript" src="lib/jquery-1.9.1.js"&gt;&lt;/script&gt;</code></li>
+                <li><code>&lt;script type="text/javascript" src="lib/jquery.mousewheel.js"&gt;&lt;/script&gt;</code></li>
+                <li><code>&lt;script type="text/javascript" src="jquery.gallary.js"&gt;&lt;/script&gt;</code></li>
+            </ol>
+        </div>
+        
+        <h1>调用	</h1>
+        <div class="codeWrapper">
+            <ol>
+                <li><code>$("#{yourId}").gallary({</code></li>
+               	<li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pic_nums" : 5, // 图片个数,对应上述html里IMG标签个数；默认3个</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"hide_text" : false, //是否自动隐藏文字；默认是true，即自动隐藏</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auto" : true, //是否自动播放；默认是false</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auto_interval": 3000, //自动播放的间隔，单位毫秒；默认3000毫秒，即三秒</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mouse" : true, //是否支持鼠标切换图片；默认是false</code></li>
+                <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mouse_id" : this.attr("id") //鼠标切换触发的id；默认是主id即{your_id}</code></li>
+                <li><code>});</code></li>
+            </ol>
+        </div>
+        
+        <h1><strong>下载地址</strong>：<a href="https://github.com/7LI/jQuery-bouncemenu" target="_blank">github.com/7LI/jQuery-bouncemenu</a></h1>
+        <p>作者： <em>Nancle from CAU CS101</em></p>
+        <p><a href="http://blog.csdn.net/liuyanzhi08" target="_blank">博客：http://blog.csdn.net/liuyanzhi08	</a></p>
+    </div>
+	
+</body>
+</html>
